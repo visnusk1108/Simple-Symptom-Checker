@@ -1,0 +1,33 @@
+package com.example.symptomchecker
+
+import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val symptomInput = findViewById<EditText>(R.id.symptomInput)
+        val checkButton = findViewById<Button>(R.id.checkButton)
+        val resultText = findViewById<TextView>(R.id.resultText)
+
+        checkButton.setOnClickListener {
+            val symptoms = symptomInput.text.toString().toLowerCase()
+            val result = checkSymptoms(symptoms)
+            resultText.text = result
+        }
+    }
+
+    private fun checkSymptoms(symptoms: String): String {
+        return when {
+            symptoms.contains("fever") && symptoms.contains("cough") -> "You might have the flu."
+            symptoms.contains("headache") -> "You might have a migraine."
+            else -> "Consult a doctor for an accurate diagnosis."
+        }
+    }
+}
