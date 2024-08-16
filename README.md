@@ -24,7 +24,7 @@ To get started with the Symptom Checker app, follow these steps:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/SymptomChecker.git
+   git clone https://github.com/visnusk1108/SymptomChecker.git
 2. **Open in Android Studio**
 3. **un the app on an emulator or your Android device**
 
